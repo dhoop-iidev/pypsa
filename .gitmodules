@@ -1,3 +1,9 @@
 [submodule "pypsa-eur"]
 	path = pypsa-eur
 	url = https://github.com/pypsa/pypsa-eur
+[submodule "pypsa-earth"]
+	path = pypsa-earth
+	url = https://github.com/dhoop-iidev/pypsa-earth.git
+[submodule "documentation"]
+	path = documentation
+	url = https://github.com/dhoop-iidev/documentation.git
