@@ -1,0 +1,27 @@
+# HOW TO CLONE FULL REPO WITH ALL SUBMODULES
+
+## Option 1: Clone everything at once (RECOMMENDED)
+git clone --recurse-submodules https://github.com/dhoop-iidev/pypsa.git
+
+## Option 2: Clone then initialize submodules separately
+git clone https://github.com/dhoop-iidev/pypsa.git
+cd pypsa
+git submodule update --init --recursive
+
+## What you'll get:
+- Main pypsa repository (pypsa-eur-mga framework with custom modifications)
+- pypsa-eur/ subfolder (original pypsa-eur submodule)
+- pypsa-earth/ subfolder (your custom pypsa-earth fork)
+- documentation/ subfolder (your documentation fork)
+
+## If submodules are empty after cloning:
+cd pypsa
+git submodule update --init --recursive
+
+## To check submodule status:
+git submodule status
+
+## Note: All submodules are private repositories, so you need access to:
+- https://github.com/dhoop-iidev/pypsa (main repo)
+- https://github.com/dhoop-iidev/pypsa-earth
+- https://github.com/dhoop-iidev/documentation

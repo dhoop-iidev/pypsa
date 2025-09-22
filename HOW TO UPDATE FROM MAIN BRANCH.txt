@@ -1,0 +1,84 @@
+# HOW TO UPDATE FROM ORIGINAL UPSTREAM REPOSITORIES
+
+## 1. UPDATE MAIN REPOSITORY (pypsa-eur-mga)
+# Navigate to main directory
+cd C:\pypsa
+
+# Fetch latest changes from original pypsa-eur-mga
+git fetch upstream
+
+# Merge latest changes (be careful of conflicts with your modifications)
+git merge upstream/master
+
+# Push updated changes to your fork
+git push origin master
+
+## 2. UPDATE PYPSA-EARTH SUBMODULE
+# Navigate to pypsa-earth submodule
+cd pypsa-earth
+
+# Add upstream remote (only needed once)
+git remote add upstream https://github.com/pypsa-meets-earth/pypsa-earth.git
+
+# Fetch and merge latest changes
+git fetch upstream
+git merge upstream/main
+
+# Push to your fork
+git push origin main
+
+# Go back to main directory
+cd ..
+
+# Update main repo to point to new pypsa-earth commit
+git add pypsa-earth
+git commit -m "Update pypsa-earth submodule to latest upstream"
+git push origin master
+
+## 3. UPDATE DOCUMENTATION SUBMODULE
+# Navigate to documentation submodule
+cd documentation
+
+# Add upstream remote (only needed once)
+git remote add upstream https://github.com/pypsa-meets-earth/documentation.git
+
+# Fetch and merge latest changes
+git fetch upstream
+git merge upstream/main
+
+# Push to your fork
+git push origin main
+
+# Go back to main directory
+cd ..
+
+# Update main repo to point to new documentation commit
+git add documentation
+git commit -m "Update documentation submodule to latest upstream"
+git push origin master
+
+## 4. UPDATE PYPSA-EUR SUBMODULE (if needed)
+# This is the original submodule, usually auto-updated by pypsa-eur-mga updates
+cd pypsa-eur
+git fetch origin
+git merge origin/master
+cd ..
+git add pypsa-eur
+git commit -m "Update pypsa-eur submodule"
+git push origin master
+
+## HANDLING MERGE CONFLICTS:
+# If you get conflicts during merge:
+# 1. Git will mark conflicted files
+# 2. Edit files manually to resolve conflicts
+# 3. git add <resolved-files>
+# 4. git commit
+# 5. git push origin <branch-name>
+
+## CHECK STATUS:
+# To see submodule status:
+git submodule status
+
+# To see if updates are available:
+git submodule foreach git fetch
+git submodule foreach git status

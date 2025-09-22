@@ -21,7 +21,7 @@ pypsa.pf.logger.setLevel(logging.WARNING)
 from vresutils.benchmark import memory_logger
 
 # Add pypsa-eur scripts to path for import
-sys.path.insert(0, os.getcwd() + "/pypsa-eur/scripts")
+sys.path.insert(0, os.getcwd() + "/pypsa-earth/scripts")
 
 from solve_network import prepare_network, add_battery_constraints
 
